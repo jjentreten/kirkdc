@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suplemento Capilar Kirkland | 60 Cápsulas (Cabelo &amp; Barba) | Kirkland Original</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/cart.css">
+  <link rel="stylesheet" href="../css/header-global.css">
+  <style>
+    :root {
+      --brand-blue: #043684;
+      --pdp-cta: #043684;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f5f5f5;
+      color: #1a1a1a;
+      min-height: 100vh;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+
+    /* ========== PDP ========== */
+    .pdp { padding: 20px 16px 40px; max-width: 1200px; margin: 0 auto; }
+    .pdp__media {
+      background: #fff;
+      padding: 24px 16px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 280px;
+    }
+    .pdp__media img {
+      max-width: 100%;
+      max-height: 320px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .pdp__title {
+      font-size: 1.375rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: #1a1a1a;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    .pdp__price { font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 14px; }
+    .pdp__price-de { font-size: 1rem; font-weight: 500; color: #888; text-decoration: line-through; margin-right: 10px; }
+    .pdp__badge {
+      background: #fafafa;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-bottom: 18px;
+      font-size: 0.8125rem;
+      line-height: 1.4;
+      color: #4b5563;
+      border-left: 3px solid var(--pdp-cta);
+    }
+    .pdp__badge ul { list-style: none; margin: 0; padding: 0; }
+    .pdp__badge li { margin-bottom: 2px; }
+    .pdp__badge li:last-child { margin-bottom: 0; }
+    .pdp__badge b { color: #1a1a1a; font-weight: 600; }
+    .pdp__badge-title { display: flex; align-items: center; gap: 6px; }
+    .pdp__badge-icon { display: inline-flex; align-items: center; justify-content: center; color: var(--brand-blue); flex-shrink: 0; }
+    .pdp__badge-icon svg { width: 18px; height: 18px; }
+    .pdp__buy {
+      display: block;
+      width: 100%;
+      padding: 16px 24px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #fff;
+      background: var(--pdp-cta);
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-bottom: 32px;
+      transition: background 0.2s, transform 0.02s;
+    }
+    .pdp__buy:hover { background: #032a5c; }
+    .pdp__buy:active { transform: scale(0.99); }
+
+    .pdp__section {
+      background: #fff;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+    .pdp__section-header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 18px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      background: #fff;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+    }
+    .pdp__section-header svg { width: 20px; height: 20px; color: #6b7280; flex-shrink: 0; transition: transform 0.2s; }
+    .pdp__section.is-open .pdp__section-header svg { transform: rotate(180deg); }
+    .pdp__section-content {
+      padding: 0 18px 18px;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: #4b5563;
+    }
+    .pdp__section-content-title { font-size: 1rem; font-weight: 700; color: #1a1a1a; margin: 0 0 12px; text-transform: uppercase; letter-spacing: 0.02em; }
+    .pdp__section-content p { margin-bottom: 12px; }
+    .pdp__section-content p:last-child { margin-bottom: 0; }
+    .pdp__section-content strong { color: #1a1a1a; }
+    .pdp__section-content ul { margin: 10px 0 10px 18px; }
+    .pdp__section-content li { margin-bottom: 4px; }
+    .pdp__section-content .pdp__disclaimer { font-size: 0.8125rem; color: #9ca3af; margin-top: 14px; }
+    .pdp__section-content img { max-width: 100%; height: auto; display: block; margin: 16px 0; border-radius: 8px; }
+    .pdp__section-content .pdp__desc-imgs { display: flex; align-items: center; gap: 12px; margin: 16px 0; flex-wrap: nowrap; }
+    .pdp__section-content .pdp__desc-imgs img { margin: 0; width: 48px; height: 48px; object-fit: contain; flex-shrink: 0; }
+    .pdp__section:not(.is-open) .pdp__section-content { display: none; }
+
+    /* ========== OPINIÃO DOS CONSUMIDORES ========== */
+    .pdp__reviews { margin-top: 32px; padding-top: 28px; border-top: 1px solid #e5e7eb; }
+    .pdp__reviews-title { font-size: 1.125rem; font-weight: 600; color: #1a1a1a; text-align: center; margin: 0 0 24px; position: relative; }
+    .pdp__reviews-title::before, .pdp__reviews-title::after { content: ''; position: absolute; left: 50%; transform: translateX(-50%); width: 60px; height: 1px; background: #d1d5db; }
+    .pdp__reviews-title::before { top: -12px; }
+    .pdp__reviews-title::after { bottom: -12px; }
+    .pdp__reviews-summary { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+    .pdp__reviews-score { font-size: 2.25rem; font-weight: 700; color: #1a1a1a; line-height: 1; }
+    .pdp__reviews-stars { display: flex; align-items: center; gap: 2px; }
+    .pdp__reviews-stars svg { width: 20px; height: 20px; }
+    .pdp__reviews-count { font-size: 0.875rem; color: #6b7280; }
+    .pdp__reviews-bars { margin-bottom: 24px; }
+    .pdp__reviews-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-size: 0.8125rem; }
+    .pdp__reviews-bar-label { width: 28px; color: #374151; }
+    .pdp__reviews-bar-track { flex: 1; height: 8px; background: #e5e7eb; border-radius: 4px; overflow: hidden; }
+    .pdp__reviews-bar-fill { height: 100%; background: #eab308; border-radius: 4px; }
+    .pdp__reviews-bar-meta { width: 72px; text-align: right; font-size: 0.75rem; color: #6b7280; }
+    .pdp__reviews-list { display: flex; flex-direction: column; gap: 20px; }
+    .pdp__review-card { padding-bottom: 20px; border-bottom: 1px solid #e5e7eb; }
+    .pdp__review-card:last-child { border-bottom: none; }
+    .pdp__review-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+    .pdp__review-card-rating { font-size: 1rem; font-weight: 700; color: #1a1a1a; }
+    .pdp__review-card-stars { display: inline-flex; gap: 1px; vertical-align: middle; margin-left: 4px; }
+    .pdp__review-card-stars svg { width: 14px; height: 14px; }
+    .pdp__review-card-date { font-size: 0.8125rem; color: #6b7280; }
+    .pdp__review-card-name { font-size: 0.9375rem; font-weight: 600; color: #1a1a1a; margin-bottom: 2px; }
+    .pdp__review-card-verified { font-size: 0.75rem; color: #6b7280; margin-bottom: 4px; }
+    .pdp__review-card-location { font-size: 0.8125rem; color: #6b7280; margin-bottom: 8px; }
+    .pdp__review-card-title { font-size: 0.9375rem; font-weight: 600; color: #1a1a1a; margin-bottom: 6px; }
+    .pdp__review-card-text { font-size: 0.875rem; line-height: 1.5; color: #4b5563; margin-bottom: 6px; }
+    .pdp__review-card-variation { font-size: 0.75rem; color: #9ca3af; margin-bottom: 10px; }
+    .pdp__review-card-helpful { font-size: 0.8125rem; color: #6b7280; display: flex; align-items: center; gap: 6px; }
+    .pdp__review-card-helpful svg { width: 16px; height: 16px; }
+
+    /* ========== BENEFÍCIOS (igual à home) ========== */
+    .brand-icons { background: linear-gradient(180deg, #f8f9fb 0%, #f2f4f6 100%); padding: 48px 0 56px; margin: 0; }
+    .brand-icons__title { font-size: 1.5rem; font-weight: 600; color: #1a1a1a; margin: 0 0 6px; text-align: center; padding: 0 16px; }
+    .brand-icons__subtitle { font-size: 0.875rem; color: #6b7280; margin: 0 0 28px; text-align: center; padding: 0 16px; }
+    .brand-icons__carousel-wrap { position: relative; padding: 0 40px; max-width: 100%; }
+    .brand-icons__arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; width: 36px; height: 36px; min-width: 36px; min-height: 36px; border: none; border-radius: 50%; background: #fff; color: #374151; box-shadow: 0 1px 3px rgba(0,0,0,0.08); cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0; opacity: 0.85; transition: opacity 0.2s, box-shadow 0.2s; }
+    .brand-icons__arrow:hover { opacity: 1; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+    .brand-icons__arrow--prev { left: 6px; }
+    .brand-icons__arrow--next { right: 6px; }
+    .brand-icons__arrow svg { width: 18px; height: 18px; }
+    .brand-icons__row { list-style: none; margin: 0; padding: 0 12px; display: flex; flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 12px; }
+    .brand-icons__row::-webkit-scrollbar { display: none; }
+    .brand-icons__item { flex: 0 0 90%; min-width: 90%; scroll-snap-align: start; padding: 22px 20px; background: rgba(255,255,255,0.95); border-radius: 18px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 1px 2px rgba(0,0,0,0.04); transition: transform 0.25s ease, box-shadow 0.25s ease; display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+    .brand-icons__item:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .brand-icons__icon-chip { width: 44px; height: 44px; border-radius: 50%; background: rgba(4, 54, 132, 0.08); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; flex-shrink: 0; color: #1a1a1a; }
+    .brand-icons__icon-chip svg { width: 22px; height: 22px; stroke-width: 1.5; }
+    .brand-icons__item-title { font-size: 1.0625rem; font-weight: 600; color: #1a1a1a; margin: 0 0 8px; }
+    .brand-icons__item p { font-size: 0.8125rem; line-height: 1.55; color: #6b7280; margin: 0; }
+    .brand-icons__dots { display: flex; justify-content: center; gap: 8px; margin-top: 20px; padding: 0 16px; }
+    .brand-icons__dot { width: 8px; height: 8px; border-radius: 50%; border: none; padding: 0; background: #d1d5db; cursor: pointer; transition: background 0.2s, transform 0.2s; }
+    .brand-icons__dot.is-active { background: #374151; transform: scale(1.15); }
+    @media (min-width: 768px) {
+      .brand-icons__item { flex: 0 0 88%; min-width: 88%; padding: 24px 24px; }
+      .brand-icons__item-title { font-size: 1.125rem; }
+      .brand-icons__item p { font-size: 0.875rem; }
+    }
+
+    /* ========== FOOTER (igual à home) ========== */
+    .footer { background: #fff; padding: 40px 0 32px; margin: 0; border-top: 1px solid rgba(0,0,0,0.08); }
+    .footer .container.footer__container { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+    .footer__row { margin-bottom: 32px; }
+    .footer__row--bottom { margin-bottom: 0; padding-top: 24px; border-top: 1px solid rgba(0,0,0,0.08); }
+    .footer__block { margin-bottom: 28px; }
+    .footer__block:last-child { margin-bottom: 0; }
+    .footer-newsletter__title { font-size: 1rem; font-weight: 700; color: #1a1a1a; margin: 0 0 6px; }
+    .footer-newsletter__subtitle { font-size: 0.875rem; color: #555; margin: 0 0 16px; line-height: 1.4; }
+    .footer-newsletter__form { display: flex; gap: 8px; margin-bottom: 0; }
+    .footer-newsletter__input { flex: 1; min-width: 0; height: 44px; padding: 0 14px; font-size: 0.9375rem; border: 1px solid rgba(0,0,0,0.15); border-radius: 8px; box-sizing: border-box; }
+    .footer-newsletter__btn { flex-shrink: 0; width: 44px; height: 44px; padding: 0; display: flex; align-items: center; justify-content: center; background: var(--brand-blue); color: #fff; border: none; border-radius: 8px; cursor: pointer; }
+    .footer-newsletter__btn:hover { background: #032a5c; }
+    .footer-newsletter__arrow { width: 20px; height: 18px; }
+    .footer__subtitle { font-size: 1rem; font-weight: 700; color: #1a1a1a; margin: 0 0 12px; display: block; }
+    .footer__menu { list-style: none; margin: 0; padding: 0; }
+    .footer__menu li { margin: 0 0 2px; }
+    .footer__menu a { display: flex; align-items: center; font-size: 0.9375rem; line-height: 1.4; color: #444; text-decoration: none; padding: 10px 0; min-height: 44px; box-sizing: border-box; }
+    .footer__menu a:hover { color: var(--brand-blue); }
+    .footer__payments { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 12px; align-items: center; }
+    .footer__payments__item { flex: 0 0 auto; width: 55px; height: 35px; background: #fff; border: 1px solid #f5f6f5; border-radius: 6px; display: flex; align-items: center; justify-content: center; padding: 4px; box-sizing: border-box; }
+    .footer__payments__item img, .footer__payments__item svg { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+    .footer__copyright-title { font-size: 0.9375rem; font-weight: 700; color: #1a1a1a; margin: 0 0 12px; display: block; }
+    .footer__copyright-text { font-size: 0.8125rem; line-height: 1.55; color: #666; margin: 0 0 12px; }
+    .footer__copyright-text.no-bottom-margin { margin-bottom: 0; }
+    .security-seal__list { display: flex; flex-wrap: wrap; gap: 10px 12px; align-items: center; }
+    .security-seal__item { flex: 0 0 auto; width: 90px; height: 52px; background: #fff; border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 6px; box-sizing: border-box; }
+    .security-seal__item img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+    @media (min-width: 768px) {
+      .footer { padding: 48px 0 40px; }
+      .footer .container.footer__container { padding: 0 24px; }
+      .footer__row--main { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px 40px; }
+      .footer__block--newsletter { grid-column: 1 / -1; }
+      .footer__row--bottom { display: grid; grid-template-columns: 1fr auto; gap: 24px 40px; align-items: start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header-sticky" id="header-sticky">
+    <div class="header-promo" role="status" aria-live="polite" id="header-promo">
+      <div class="header-promo__slides">
+        <div class="header-promo__track" id="header-promo-track">
+          <div class="header-promo__slide" data-slide="0">
+            <span class="header-promo__text">A loja da Kirkland no Brasil!</span>
+            <span class="header-promo__icon" aria-hidden="true" title="Bandeira do Brasil">🇧🇷</span>
+          </div>
+          <div class="header-promo__slide" data-slide="1">
+            <span class="header-promo__text">Compre seu Minoxidil 100% ORIGINAL!</span>
+            <span class="header-promo__icon header-promo__icon--svg" aria-hidden="true" title="100% Original">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+          </div>
+          <div class="header-promo__slide" data-slide="2">
+            <span class="header-promo__text">Frete Grátis para Todo o BRASIL!</span>
+            <span class="header-promo__icon header-promo__icon--svg" aria-hidden="true" title="Frete Grátis">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header class="header">
+      <div class="container header__container">
+        <div class="header__nav">
+          <div class="header__nav-left">
+            <a href="#" rel="nofollow" aria-label="Menu" class="header__item header__item--hamburger header__item--mobile">
+              <div class="icon-hamburger"><span class="icon-hamburger__lines"></span></div>
+            </a>
+          </div>
+          <div class="header__nav-center">
+            <a href="../index.html" aria-label="Home" class="header__item header__item--logo header__item--logo-sudden">
+              <div class="logo__wrapper">
+                <img src="../images/logo-kirkland-signature.png" alt="Kirkland Signature" class="logo logo--img" width="160" height="45" loading="eager">
+              </div>
+            </a>
+          </div>
+          <div class="header__nav-right">
+            <a href="/login" aria-label="Conta" class="header__item header__item--icon user-widget__icon">
+              <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            </a>
+            <a href="../index.html#cart" id="cart-toggle" aria-label="Carrinho" class="header__item header__item--icon">
+              <div class="cart-widget">
+                <span class="cart-count" id="cart-count-badge" aria-hidden="true" style="display:none">0</span>
+                <svg viewBox="0 0 24 24" width="24" height="24"><g fill="currentColor"><path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 16H5V8h2v2c0 .55.45 1 1 1s1-.45 1-1V8h6v2c0 .55.45 1 1 1s1-.45 1-1V8h2v11z"/></g></svg>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="header__search" id="header-search">
+          <div class="search-wrapper">
+            <input type="search" class="search-input" placeholder="Busque por kits, tratamentos e ofertas" aria-label="Pesquisar">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <main class="pdp">
+    <div class="pdp__media">
+      <img
+        id="pdp-main-image"
+        src="../images/suplemento-capilar-1x.png"
+        alt="Suplemento Capilar Kirkland | 60 Cápsulas (Cabelo &amp; Barba)"
+        width="400"
+        height="400"
+        loading="eager"
+      >
+    </div>
+
+    <h1 class="pdp__title">Suplemento Capilar Kirkland | 60 Cápsulas (Cabelo &amp; Barba)</h1>
+
+    <p class="pdp__price"><span class="pdp__price-de">R$ 129,90</span> R$ 79,90</p>
+
+    <div class="pdp__badge" role="region" aria-label="Promoção">
+      <ul>
+        <li class="pdp__badge-title">
+          <b>10% OFF no Pix</b>
+          <span class="pdp__badge-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          </span>
+        </li>
+        <li>Use o cupom <strong>"NOPIX"</strong> e ganhe +10% de desconto.</li>
+      </ul>
+    </div>
+
+    <button type="button" class="pdp__buy" id="pdp-buy-btn">COMPRAR AGORA</button>
+
+    <section class="pdp__section is-open" id="pdp-description">
+      <button type="button" class="pdp__section-header" id="pdp-desc-toggle" aria-expanded="true" aria-controls="pdp-desc-content">
+        Descrição
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="pdp__section-content" id="pdp-desc-content" role="region" aria-labelledby="pdp-desc-toggle">
+        <p>O <strong>Suplemento Capilar Kirkland</strong> é formulado com nutrientes que auxiliam na saúde do cabelo e da barba. Indicado para quem busca fortalecer os fios, reduzir a queda e dar mais vitalidade ao crescimento.</p>
+        <p><strong>Benefícios</strong> no auxílio da nutrição capilar e da qualidade dos fios, podendo contribuir para cabelos e barba mais fortes e saudáveis quando associado a hábitos de vida equilibrados.</p>
+        <ul>
+          <li>Suplemento para uso oral, prático no dia a dia.</li>
+          <li><strong>Fórmula com vitaminas e minerais</strong> que podem auxiliar na saúde dos cabelos e da barba.</li>
+        </ul>
+        <p><strong>Modo de uso</strong></p>
+        <p>Tomar 1 cápsula ao dia, preferencialmente com uma refeição, ou conforme orientação de um profissional de saúde.</p>
+        <p><strong>Especificação</strong></p>
+        <p>Suplemento Capilar Kirkland - 60 Cápsulas (Cabelo &amp; Barba)</p>
+        <ul>
+          <li>01 Frasco com 60 cápsulas</li>
+        </ul>
+        <p><strong>Validade:</strong> Superior a 12 meses em relação à data da compra.</p>
+        <p class="pdp__disclaimer">*As informações deste site não substituem orientação médica. Consulte um profissional de saúde antes de iniciar qualquer tratamento ou suplementação.</p>
+      </div>
+    </section>
+
+    <section class="pdp__reviews" aria-labelledby="pdp-reviews-title">
+      <h2 class="pdp__reviews-title" id="pdp-reviews-title">Opinião dos consumidores</h2>
+
+      <div class="pdp__reviews-summary">
+        <span class="pdp__reviews-score">4,8</span>
+        <span class="pdp__reviews-stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2l3 7 7 1-5 5 1 7-6-3.5L6 22l1-7-5-5 7-1 3-7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2l3 7 7 1-5 5 1 7-6-3.5L6 22l1-7-5-5 7-1 3-7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2l3 7 7 1-5 5 1 7-6-3.5L6 22l1-7-5-5 7-1 3-7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2l3 7 7 1-5 5 1 7-6-3.5L6 22l1-7-5-5 7-1 3-7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#e5e7eb"><path d="M12 2l3 7 7 1-5 5 1 7-6-3.5L6 22l1-7-5-5 7-1 3-7z"/></svg>
+        </span>
+        <span class="pdp__reviews-count">Baseado em 186 avaliações</span>
+      </div>
+
+      <div class="pdp__reviews-bars">
+        <div class="pdp__reviews-bar-row">
+          <span class="pdp__reviews-bar-label">5★</span>
+          <div class="pdp__reviews-bar-track"><div class="pdp__reviews-bar-fill" style="width: 82%"></div></div>
+          <span class="pdp__reviews-bar-meta">82% — 153</span>
+        </div>
+        <div class="pdp__reviews-bar-row">
+          <span class="pdp__reviews-bar-label">4★</span>
+          <div class="pdp__reviews-bar-track"><div class="pdp__reviews-bar-fill" style="width: 10%"></div></div>
+          <span class="pdp__reviews-bar-meta">10% — 19</span>
+        </div>
+        <div class="pdp__reviews-bar-row">
+          <span class="pdp__reviews-bar-label">3★</span>
+          <div class="pdp__reviews-bar-track"><div class="pdp__reviews-bar-fill" style="width: 4%"></div></div>
+          <span class="pdp__reviews-bar-meta">4% — 7</span>
+        </div>
+        <div class="pdp__reviews-bar-row">
+          <span class="pdp__reviews-bar-label">2★</span>
+          <div class="pdp__reviews-bar-track"><div class="pdp__reviews-bar-fill" style="width: 2%"></div></div>
+          <span class="pdp__reviews-bar-meta">2% — 4</span>
+        </div>
+        <div class="pdp__reviews-bar-row">
+          <span class="pdp__reviews-bar-label">1★</span>
+          <div class="pdp__reviews-bar-track"><div class="pdp__reviews-bar-fill" style="width: 2%"></div></div>
+          <span class="pdp__reviews-bar-meta">2% — 3</span>
+        </div>
+      </div>
+
+      <div class="pdp__reviews-list">
+        <article class="pdp__review-card">
+          <div class="pdp__review-card-header">
+            <span><span class="pdp__review-card-rating">5.0</span><span class="pdp__review-card-stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2l3 7 7 1-5 5 1 7-6-3.5L6 22l1-7-5-5 7-1 3-7z"/></svg><svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2l3 7 7 1-5 5 1 7-6-3.5L6 22l1-7-5-5 7-1 3-7z"/></svg><svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2l3 7 7 1-5 5 1 7-6-3.5L6 22l1-7-5-5 7-1 3-7z"/></svg><svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2l3 7 7 1-5 5 1 7-6-3.5L6 22l1-7-5-5 7-1 3-7z"/></svg><svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2l3 7 7 1-5 5 1 7-6-3.5L6 22l1-7-5-5 7-1 3-7z"/></svg></span></span>
+            <span class="pdp__review-card-date">10/03/2026</span>
+          </div>
+          <p class="pdp__review-card-name">RENATO A.</p>
+          <p class="pdp__review-card-verified">Comprador verificado</p>
+          <p class="pdp__review-card-location">Brasil</p>
+          <p class="pdp__review-card-title">Prático e resultado no cabelo</p>
+          <p class="pdp__review-card-text">Uso há 2 meses junto com o minoxidil. Uma cápsula por dia, super fácil. Meu cabelo está mais forte e com menos queda. Produto original.</p>
+          <p class="pdp__review-card-variation">Suplemento Capilar Kirkland | 60 Cápsulas (Cabelo &amp; Barba)</p>
+          <p class="pdp__review-card-helpful">Este comentário foi útil? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg> 28</p>
+        </article>
+        <article class="pdp__review-card">
+          <div class="pdp__review-card-header">
+            <span><span class="pdp__review-card-rating">5.0</span><span class="pdp__review-card-stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2l3 7 7 1-5 5 1 7-6-3.5L6 22l1-7-5-5 7-1 3-7z"/></svg><svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2l3 7 7 1-5 5 1 7-6-3.5L6 22l1-7-5-5 7-1 3-7z"/></svg><svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2l3 7 7 1-5 5 1 7-6-3.5L6 22l1-7-5-5 7-1 3-7z"/></svg><svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2l3 7 7 1-5 5 1 7-6-3.5L6 22l1-7-5-5 7-1 3-7z"/></svg><svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2l3 7 7 1-5 5 1 7-6-3.5L6 22l1-7-5-5 7-1 3-7z"/></svg></span></span>
+            <span class="pdp__review-card-date">08/03/2026</span>
+          </div>
+          <p class="pdp__review-card-name">FABIANO M.</p>
+          <p class="pdp__review-card-verified">Comprador verificado</p>
+          <p class="pdp__review-card-location">Brasil</p>
+          <p class="pdp__review-card-title">Suplemento original Kirkland</p>
+          <p class="pdp__review-card-text">Comprei para complementar o tratamento. Uma cápsula ao dia no café da manhã. Produto original, entrega rápida. Recomendo.</p>
+          <p class="pdp__review-card-variation">Suplemento Capilar Kirkland | 60 Cápsulas (Cabelo &amp; Barba)</p>
+          <p class="pdp__review-card-helpful">Este comentário foi útil? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg> 19</p>
+        </article>
+        <article class="pdp__review-card">
+          <div class="pdp__review-card-header">
+            <span><span class="pdp__review-card-rating">5.0</span><span class="pdp__review-card-stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2l3 7 7 1-5 5 1 7-6-3.5L6 22l1-7-5-5 7-1 3-7z"/></svg><svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2l3 7 7 1-5 5 1 7-6-3.5L6 22l1-7-5-5 7-1 3-7z"/></svg><svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2l3 7 7 1-5 5 1 7-6-3.5L6 22l1-7-5-5 7-1 3-7z"/></svg><svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2l3 7 7 1-5 5 1 7-6-3.5L6 22l1-7-5-5 7-1 3-7z"/></svg><svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2l3 7 7 1-5 5 1 7-6-3.5L6 22l1-7-5-5 7-1 3-7z"/></svg></span></span>
+            <span class="pdp__review-card-date">05/03/2026</span>
+          </div>
+          <p class="pdp__review-card-name">CAIO S.</p>
+          <p class="pdp__review-card-verified">Comprador verificado</p>
+          <p class="pdp__review-card-location">Brasil</p>
+          <p class="pdp__review-card-title">Bom custo-benefício</p>
+          <p class="pdp__review-card-text">Suplemento para cabelo e barba, 60 cápsulas. Tomo há um mês e senti os fios mais fortes. Embalagem lacrada, produto original Kirkland.</p>
+          <p class="pdp__review-card-helpful">Este comentário foi útil? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg> 14</p>
+        </article>
+        <article class="pdp__review-card">
+          <div class="pdp__review-card-header">
+            <span><span class="pdp__review-card-rating">5.0</span><span class="pdp__review-card-stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2l3 7 7 1-5 5 1 7-6-3.5L6 22l1-7-5-5 7-1 3-7z"/></svg><svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2l3 7 7 1-5 5 1 7-6-3.5L6 22l1-7-5-5 7-1 3-7z"/></svg><svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2l3 7 7 1-5 5 1 7-6-3.5L6 22l1-7-5-5 7-1 3-7z"/></svg><svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2l3 7 7 1-5 5 1 7-6-3.5L6 22l1-7-5-5 7-1 3-7z"/></svg><svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2l3 7 7 1-5 5 1 7-6-3.5L6 22l1-7-5-5 7-1 3-7z"/></svg></span></span>
+            <span class="pdp__review-card-date">02/03/2026</span>
+          </div>
+          <p class="pdp__review-card-name">DIEGO R.</p>
+          <p class="pdp__review-card-verified">Comprador verificado</p>
+          <p class="pdp__review-card-location">Brasil</p>
+          <p class="pdp__review-card-title">Entrega rápida</p>
+          <p class="pdp__review-card-text">Comprei para testar. Uma cápsula por dia, fácil de lembrar. Produto original, preço bom. Vou repetir a compra.</p>
+          <p class="pdp__review-card-variation">Suplemento Capilar Kirkland | 60 Cápsulas (Cabelo &amp; Barba)</p>
+          <p class="pdp__review-card-helpful">Este comentário foi útil? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg> 9</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="brand-icons">
+    <h3 class="brand-icons__title" id="brand-icons-title">Benefícios da Kirkland Original</h3>
+    <p class="brand-icons__subtitle">Tudo pensado para um tratamento seguro e eficaz.</p>
+    <div class="brand-icons__carousel-wrap">
+      <button type="button" class="brand-icons__arrow brand-icons__arrow--prev" id="brand-icons-prev" aria-label="Benefício anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button type="button" class="brand-icons__arrow brand-icons__arrow--next" id="brand-icons-next" aria-label="Próximo benefício">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+      <ul class="brand-icons__row" id="brand-icons-carousel" aria-labelledby="brand-icons-title">
+        <li class="brand-icons__item">
+          <div class="brand-icons__icon-chip" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13" rx="1"/>
+              <path d="M16 8h4l3 3v5h-7V8z"/>
+              <circle cx="5.5" cy="18.5" r="2.5"/>
+              <circle cx="18.5" cy="18.5" r="2.5"/>
+              <path d="M5 8v2h4V8H5z"/>
+            </svg>
+          </div>
+          <h4 class="brand-icons__item-title">Frete Grátis para todo o Brasil</h4>
+          <p>Receba seu pedido com frete grátis e acompanhamento completo através de código de rastreio até a entrega.</p>
+        </li>
+        <li class="brand-icons__item">
+          <div class="brand-icons__icon-chip" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <h4 class="brand-icons__item-title">Produto 100% Original</h4>
+          <p>Direto do fabricante para suas mãos. Produto autêntico, com controle de qualidade e sem intermediários.</p>
+        </li>
+        <li class="brand-icons__item">
+          <div class="brand-icons__icon-chip" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0L12 2.69z"/>
+            </svg>
+          </div>
+          <h4 class="brand-icons__item-title">Fórmula Potente</h4>
+          <p>Fórmula de alta concentração desenvolvida para estimular os folículos capilares e auxiliar no crescimento saudável dos fios.</p>
+        </li>
+        <li class="brand-icons__item">
+          <div class="brand-icons__icon-chip" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="11" width="14" height="10" rx="1"/>
+              <path d="M8 11V7a4 4 0 1 1 8 0v4"/>
+            </svg>
+          </div>
+          <h4 class="brand-icons__item-title">Compra 100% Segura</h4>
+          <p>Ambiente protegido com Pix, cartão de crédito e boleto.</p>
+        </li>
+      </ul>
+    </div>
+    <div class="brand-icons__dots" id="brand-icons-dots" role="tablist" aria-label="Benefícios">
+      <button type="button" class="brand-icons__dot is-active" role="tab" aria-selected="true" aria-label="Benefício 1" data-index="0"></button>
+      <button type="button" class="brand-icons__dot" role="tab" aria-selected="false" aria-label="Benefício 2" data-index="1"></button>
+      <button type="button" class="brand-icons__dot" role="tab" aria-selected="false" aria-label="Benefício 3" data-index="2"></button>
+      <button type="button" class="brand-icons__dot" role="tab" aria-selected="false" aria-label="Benefício 4" data-index="3"></button>
+    </div>
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__container">
+      <div class="footer__row footer__row--main">
+        <div class="footer__block footer__block--newsletter">
+          <div class="footer-newsletter">
+            <h4 class="footer-newsletter__title">Receba dicas de tratamento no seu e-mail.</h4>
+            <p class="footer-newsletter__subtitle">Saiba primeiro sobre promoções, combos exclusivos e conteúdos sobre crescimento capilar.</p>
+            <form id="newsletter_subscriber" class="footer-newsletter__form" accept-charset="UTF-8">
+              <input id="newsletter_email" type="email" name="email" placeholder="Insira seu e-mail" aria-label="Email" class="footer-newsletter__input">
+              <button type="submit" class="footer-newsletter__btn" aria-label="Enviar">
+                <svg class="footer-newsletter__arrow" viewBox="0 0 23 20" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M22.911 10.404C22.862 10.534 22.788 10.657 22.683 10.762L14.731 18.715C14.332 19.114 13.684 19.114 13.285 18.715C12.886 18.315 12.886 17.668 13.285 17.269L19.554 11H1C0.448 11 0 10.552 0 9.99999C0 9.44799 0.448 8.99999 1 8.99999H19.555L13.285 2.72999C12.886 2.33099 12.886 1.68299 13.285 1.28399C13.684 0.884991 14.332 0.884991 14.731 1.28399L22.683 9.23599C22.788 9.34199 22.862 9.46499 22.912 9.59599C22.967 9.71999 23 9.85599 23 9.99999C23 10.144 22.967 10.28 22.911 10.404Z" fill="currentColor"/></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="footer__block footer__block--nav">
+          <span class="footer__subtitle">Sobre a Kirkland Original</span>
+          <ul class="footer__menu">
+            <li><a href="../quem-somos.html" rel="nofollow">Quem Somos</a></li>
+            <li><a href="../central-ajuda.html" rel="nofollow">Central de ajuda</a></li>
+            <li><a href="../politica-privacidade.html" rel="nofollow">Política de Privacidade</a></li>
+            <li><a href="../termos-de-uso.html" rel="nofollow">Termos de Uso</a></li>
+          </ul>
+        </div>
+        <div class="footer__block footer__block--payments">
+          <span class="footer__subtitle">Métodos de Pagamento</span>
+          <ul class="footer__payments">
+            <li class="footer__payments__item" aria-label="Pix">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 30 30" aria-hidden="true"><path fill="#32bcad" d="M 15 1.0996094 C 13.975 1.0996094 12.949922 1.4895313 12.169922 2.2695312 L 7.1894531 7.25 L 7.3398438 7.25 C 8.6098437 7.25 9.7992188 7.740625 10.699219 8.640625 L 14.189453 12.130859 C 14.639453 12.570859 15.360547 12.570859 15.810547 12.130859 L 19.300781 8.640625 C 20.200781 7.740625 21.390156 7.25 22.660156 7.25 L 22.810547 7.25 L 17.830078 2.2695312 C 17.050078 1.4895313 16.025 1.0996094 15 1.0996094 z M 5.6894531 8.75 L 2.2695312 12.169922 C 0.70953125 13.729922 0.70953125 16.270078 2.2695312 17.830078 L 5.6894531 21.25 L 7.3398438 21.25 C 8.2098438 21.25 9.030625 20.910781 9.640625 20.300781 L 13.130859 16.810547 C 14.160859 15.780547 15.839141 15.780547 16.869141 16.810547 L 20.359375 20.300781 C 20.969375 20.910781 21.790156 21.25 22.660156 21.25 L 24.310547 21.25 L 27.730469 17.830078 C 29.290469 16.270078 29.290469 13.729922 27.730469 12.169922 L 24.310547 8.75 L 22.660156 8.75 C 21.790156 8.75 20.969375 9.0892188 20.359375 9.6992188 L 16.869141 13.189453 C 16.359141 13.699453 15.68 13.960938 15 13.960938 C 14.32 13.960938 13.640859 13.699453 13.130859 13.189453 L 9.640625 9.6992188 C 9.030625 9.0892187 8.2098437 8.75 7.3398438 8.75 L 5.6894531 8.75 z M 15 17.539062 C 14.7075 17.539062 14.414453 17.649141 14.189453 17.869141 L 10.699219 21.359375 C 9.7992188 22.259375 8.6098437 22.75 7.3398438 22.75 L 7.1894531 22.75 L 12.169922 27.730469 C 13.729922 29.290469 16.270078 29.290469 17.830078 27.730469 L 22.810547 22.75 L 22.660156 22.75 C 21.390156 22.75 20.200781 22.259375 19.300781 21.359375 L 15.810547 17.869141 C 15.585547 17.649141 15.2925 17.539062 15 17.539062 z"/></svg>
+            </li>
+            <li class="footer__payments__item" aria-label="Visa">
+              <img src="https://img.icons8.com/?size=100&id=47905&format=png&color=1a1f71" alt="Visa" width="40" height="26" loading="lazy">
+            </li>
+            <li class="footer__payments__item" aria-label="Mastercard">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="26"><path fill="#FF5F00" d="M15.245 17.831h-6.49V6.168h6.49v11.663z"/><path fill="#EB001B" d="M9.167 12A7.404 7.404 0 0 1 12 6.169 7.417 7.417 0 0 0 0 12a7.417 7.417 0 0 0 11.999 5.831A7.406 7.406 0 0 1 9.167 12z"/><path fill="#F79E1B" d="M24 12a7.417 7.417 0 0 1-12 5.831c1.725-1.358 2.833-3.465 2.833-5.831S13.725 7.527 12 6.169A7.417 7.417 0 0 1 24 12z"/></svg>
+            </li>
+            <li class="footer__payments__item" aria-label="American Express">
+              <img src="https://www.americanexpress.com/content/dam/amex/us/merchant/supplies-uplift/product/images/img-WEBLOGO1-01.jpg" alt="American Express" width="40" height="26" loading="lazy">
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__row footer__row--bottom">
+        <div class="footer__block footer__block--copyright">
+          <div class="footer__copyright">
+            <strong class="footer__copyright-title">Copyright © 2026 Kirkland Original. Todos os direitos reservados.</strong>
+            <p class="footer__copyright-text">Kirkland Original é uma loja especializada em Minoxidil para tratamento capilar e preenchimento de barba. Trabalhamos apenas com produtos originais e procedência garantida.</p>
+            <p class="footer__copyright-text">As informações apresentadas neste site não substituem orientação médica. Procure sempre um profissional de saúde antes de iniciar qualquer tratamento.</p>
+            <p class="footer__copyright-text no-bottom-margin">Preços e condições de pagamento podem ser alterados sem aviso prévio.</p>
+          </div>
+        </div>
+        <div class="footer__block footer__block--security">
+          <span class="footer__subtitle">Certificados de Segurança</span>
+          <div class="security-seal">
+            <div class="security-seal__list">
+              <div class="security-seal__item" aria-label="Selo RA1000"><img src="https://s3.sa-east-1.amazonaws.com/mkt.qipu.com.br/qipu/seloRA1000.png" alt="Selo RA1000" width="82" height="40" loading="lazy"></div>
+              <div class="security-seal__item" aria-label="Compra segura"><img src="https://taquirio.com.br/assets/img/selo_loja_segura.webp" alt="Compra segura" width="82" height="40" loading="lazy"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function() {
+    var section = document.getElementById('pdp-description');
+    var toggle = document.getElementById('pdp-desc-toggle');
+    var content = document.getElementById('pdp-desc-content');
+    if (toggle && content) {
+      toggle.addEventListener('click', function() {
+        var open = section.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open);
+      });
+    }
+
+    var buyBtn = document.getElementById('pdp-buy-btn');
+    if (buyBtn) {
+      buyBtn.addEventListener('click', function() {
+        if (window.animacaseCart && window.animacaseCart.addToCart) {
+          var titleEl = document.querySelector('.pdp__title');
+          var imgEl = document.getElementById('pdp-main-image');
+          window.animacaseCart.addToCart({
+            name: titleEl ? titleEl.textContent.trim() : 'Suplemento Capilar Kirkland | 60 Cápsulas (Cabelo & Barba)',
+            image: imgEl ? imgEl.src : '',
+            url: window.location.href,
+            priceSale: 79.90,
+            priceRegular: 129.90,
+            variant: '1x'
+          });
+        } else {
+          alert('Produto adicionado ao carrinho!');
+        }
+      });
+    }
+
+    /* Header promo rotation */
+    var track = document.getElementById('header-promo-track');
+    if (track) {
+      var slides = track.querySelectorAll('.header-promo__slide');
+      if (slides.length >= 2) {
+        var current = 0;
+        setInterval(function() {
+          current = (current + 1) % slides.length;
+          track.style.transform = 'translateY(-' + (current * 32) + 'px)';
+        }, 4500);
+      }
+    }
+
+    /* Brand icons carousel (com auto-scroll igual à home) */
+    var carousel = document.getElementById('brand-icons-carousel');
+    if (carousel) {
+      var items = carousel.querySelectorAll('.brand-icons__item');
+      var total = items.length;
+      if (total > 0) {
+        var GAP = 12;
+        var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function getScrollStep() {
+          if (!items[0]) return carousel.clientWidth;
+          return items[0].getBoundingClientRect().width + GAP;
+        }
+        function getCurrentIndex() {
+          var step = getScrollStep();
+          if (step <= 0) return 0;
+          var idx = Math.round(carousel.scrollLeft / step);
+          return Math.min(total - 1, Math.max(0, idx));
+        }
+        function updateDots() {
+          var idx = getCurrentIndex();
+          var i = idx >= total ? 0 : idx < 0 ? total - 1 : idx;
+          var dotsWrap = document.getElementById('brand-icons-dots');
+          if (!dotsWrap) return;
+          dotsWrap.querySelectorAll('.brand-icons__dot').forEach(function(dot, k) {
+            dot.classList.toggle('is-active', k === i);
+            dot.setAttribute('aria-selected', k === i ? 'true' : 'false');
+          });
+        }
+        function scrollToIndex(index, smooth) {
+          var step = getScrollStep();
+          if (step <= 0) return;
+          var i = (index % total + total) % total;
+          var targetLeft = i * step;
+          carousel.scrollTo({ left: targetLeft, behavior: (smooth && !reducedMotion) ? 'smooth' : 'auto' });
+        }
+
+        var paused = false;
+        var pauseUntil = 0;
+        var INTERVAL_MS = 3500;
+        var PAUSE_MS = 5000;
+        var intervalId = null;
+
+        function goToNext() {
+          if (paused && Date.now() < pauseUntil) return;
+          if (paused) paused = false;
+          var current = getCurrentIndex();
+          var next = (current + 1) % total;
+          scrollToIndex(next, true);
+        }
+        function pauseAutoScroll() {
+          paused = true;
+          pauseUntil = Date.now() + PAUSE_MS;
+        }
+        function startInterval() {
+          if (reducedMotion || intervalId != null) return;
+          intervalId = setInterval(goToNext, INTERVAL_MS);
+        }
+
+        carousel.addEventListener('touchstart', pauseAutoScroll, { passive: true });
+        carousel.addEventListener('touchmove', pauseAutoScroll, { passive: true });
+        carousel.addEventListener('mousedown', pauseAutoScroll);
+        carousel.addEventListener('wheel', pauseAutoScroll, { passive: true });
+        carousel.addEventListener('scroll', updateDots, { passive: true });
+
+        updateDots();
+        startInterval();
+
+        var prevBtn = document.getElementById('brand-icons-prev');
+        var nextBtn = document.getElementById('brand-icons-next');
+        if (prevBtn) {
+          prevBtn.addEventListener('click', function() {
+            pauseAutoScroll();
+            var prev = (getCurrentIndex() - 1 + total) % total;
+            scrollToIndex(prev, true);
+          });
+        }
+        if (nextBtn) {
+          nextBtn.addEventListener('click', function() {
+            pauseAutoScroll();
+            goToNext();
+          });
+        }
+        var dotsWrap = document.getElementById('brand-icons-dots');
+        if (dotsWrap) {
+          dotsWrap.querySelectorAll('.brand-icons__dot').forEach(function(dot) {
+            dot.addEventListener('click', function() {
+              var idx = parseInt(dot.getAttribute('data-index'), 10);
+              if (!isNaN(idx)) {
+                pauseAutoScroll();
+                scrollToIndex(idx, true);
+              }
+            });
+          });
+        }
+      }
+    }
+  })();
+  </script>
+  <script>
+  (function(){ var h=document.getElementById('header-sticky'); if(!h)return; function up(){ h.classList.toggle('is-scrolled', window.scrollY>60); }
+  window.addEventListener('scroll',function(){ requestAnimationFrame(up); },{passive:true}); up(); })();
+  </script>
+  <script src="../js/cart.js"></script>
+</body>
+</html>

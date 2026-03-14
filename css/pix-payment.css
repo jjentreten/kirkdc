@@ -1,0 +1,266 @@
+/**
+ * PIX Payment page - pix-payment.html
+ */
+.pix-page {
+  margin: 0;
+  padding: 0;
+  font-family: var(--mp-font);
+  background: var(--mp-bg);
+  min-height: 100vh;
+}
+
+.pix__skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 8px 16px;
+  background: #fff;
+  color: #000;
+}
+.pix__skip-link:focus {
+  left: 16px;
+  top: 16px;
+}
+
+.pix__header {
+  background: var(--mp-card);
+  padding: 12px 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.pix__header-inner {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.pix__logo {
+  display: inline-block;
+}
+
+.pix__logo-img {
+  height: 36px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+}
+
+.pix__main {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 24px 16px 32px;
+}
+
+.pix__card {
+  background: var(--mp-card);
+  border-radius: var(--mp-radius);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  padding: 24px;
+}
+
+.pix__header-card {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pix__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(50, 188, 173, 0.15);
+  color: #32bcad;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.pix__title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: #222;
+}
+
+.pix__subtitle {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.pix__amount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 24px;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: var(--mp-radius-sm);
+}
+
+.pix__amount-label {
+  font-size: 13px;
+  color: #666;
+}
+
+.pix__amount-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+  font-variant-numeric: tabular-nums;
+}
+
+.pix__qr-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.pix__qr-wrap {
+  padding: 12px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--mp-radius-sm);
+}
+
+.pix__qr {
+  display: block;
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+}
+
+.pix__error {
+  color: #dc2626;
+  font-size: 14px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.pix__copiacola {
+  margin-bottom: 24px;
+}
+
+.pix__copiacola-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 8px;
+}
+
+.pix__copiacola-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pix__code {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 13px;
+  font-family: monospace;
+  border: 1px solid var(--mp-border);
+  border-radius: 6px;
+  background: #f9fafb;
+  box-sizing: border-box;
+}
+
+.pix__copy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--mp-link);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  font-family: var(--mp-font);
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+
+.pix__copy-btn:hover {
+  filter: brightness(0.95);
+}
+
+.pix__copy-btn.copied {
+  background: #059669;
+}
+
+.pix__instructions {
+  margin-bottom: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.pix__instructions-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: #222;
+}
+
+.pix__instructions-list {
+  margin: 0 0 12px;
+  padding-left: 20px;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.pix__instructions-note {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.pix__footer-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.pix__btn-secondary {
+  padding: 12px 24px;
+  background: transparent;
+  color: var(--mp-link);
+  border: 2px solid var(--mp-link);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  font-family: var(--mp-font);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.pix__btn-secondary:hover {
+  background: rgba(37, 99, 235, 0.08);
+}
+
+.pix__back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--mp-link);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pix__back-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .pix__main { padding: 16px 12px 24px; }
+  .pix__card { padding: 20px 16px; }
+  .pix__qr { width: 200px; height: 200px; }
+}

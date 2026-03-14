@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="HandheldFriendly" content="True">
+  <title>Pagamento por Boleto | Kirkland Original</title>
+  <link rel="preconnect" href="https://http2.mlstatic.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-light.woff2" as="font" type="font/woff2" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Proxima Nova';
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+      src: url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-light.woff2) format("woff2"),
+           url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-light.woff) format("woff");
+    }
+    @font-face {
+      font-family: 'Proxima Nova';
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+      src: url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-regular.woff2) format("woff2"),
+           url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-regular.woff) format("woff");
+    }
+    @font-face {
+      font-family: 'Proxima Nova';
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+      src: url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff2) format("woff2"),
+           url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff) format("woff");
+    }
+  </style>
+  <link rel="stylesheet" href="css/mercado-pago.css">
+  <!-- Utmify - trackeamento -->
+  <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
+  <script>
+    window.pixelId = "6971ae2caf494da0e99c8028";
+    var a = document.createElement("script");
+    a.setAttribute("async", ""); a.setAttribute("defer", "");
+    a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+    document.head.appendChild(a);
+  </script>
+  <script>
+    window.tikTokPixelId = "697eb4acd4886f567540c7a7";
+    var b = document.createElement("script");
+    b.setAttribute("async", ""); b.setAttribute("defer", "");
+    b.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel-tiktok.js");
+    document.head.appendChild(b);
+  </script>
+</head>
+<body class="checkout-novo checkout-novo--boleto" data-theme="mp">
+  <div class="checkout-novo__loading-modal" id="checkout-loading-modal" aria-live="polite" aria-busy="true">
+    <div class="checkout-novo__loading-spinner" aria-hidden="true"></div>
+  </div>
+  <div class="checkout-novo__layout">
+    <main class="checkout-novo__main checkout-novo__main--boleto" role="main">
+      <section class="checkout-novo__screen checkout-novo__screen--boleto">
+        <!-- Header: mesmo das outras telas -->
+        <div class="checkout-header-wrapper">
+          <div class="checkout-header-card">
+            <div class="checkout-header-card__brand">
+              <img src="https://lojaintegrada.com.br/new-assets/img/mercado-pago-logo.png" alt="Mercado Pago" class="checkout-header-card__mp-logo">
+            </div>
+            <hr class="checkout-header-card__divider">
+            <div class="checkout-header-card__summary">
+              <span class="checkout-header-card__label">Compra em Kirkland Original</span>
+              <span class="checkout-header-card__value" aria-label="R$ 0,00">
+                <span class="checkout-header-card__currency">R$</span>
+                <span class="checkout-header-card__number">0,00</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 1 -->
+        <div class="checkout-novo__boleto-step" id="boleto-step-1" data-step="1">
+          <div class="checkout-novo__boleto-content">
+            <span class="checkout-novo__boleto-step-label">PASSO 1 DE 2</span>
+            <h1 class="checkout-novo__boleto-title">Informe os dados</h1>
+
+            <div class="checkout-novo__boleto-card">
+              <div class="checkout-novo__boleto-field">
+                <label class="checkout-novo__boleto-label" for="boleto-documento">Documento</label>
+                <div class="checkout-novo__boleto-input-split">
+                  <select class="checkout-novo__boleto-select" id="boleto-doc-type" aria-label="Tipo de documento">
+                    <option value="CPF">CPF</option>
+                    <option value="CNPJ">CNPJ</option>
+                  </select>
+                  <input type="text" class="checkout-novo__boleto-input" id="boleto-documento" placeholder="999.999.999-99" maxlength="14" inputmode="numeric" pattern="[0-9]*" autocomplete="off">
+                </div>
+                <span class="checkout-novo__boleto-error" id="boleto-doc-error"></span>
+              </div>
+
+              <div class="checkout-novo__boleto-field">
+                <label class="checkout-novo__boleto-label" for="boleto-nome">Nome</label>
+                <input type="text" class="checkout-novo__boleto-input" id="boleto-nome" placeholder="Ex.: Maria Clara" autocomplete="given-name">
+                <span class="checkout-novo__boleto-error" id="boleto-nome-error"></span>
+              </div>
+
+              <div class="checkout-novo__boleto-field">
+                <label class="checkout-novo__boleto-label" for="boleto-sobrenome">Sobrenome</label>
+                <input type="text" class="checkout-novo__boleto-input" id="boleto-sobrenome" placeholder="Ex.: Lopes Soares" autocomplete="family-name">
+                <span class="checkout-novo__boleto-error" id="boleto-sobrenome-error"></span>
+              </div>
+
+              <div class="checkout-novo__boleto-field">
+                <label class="checkout-novo__boleto-label" for="boleto-email">E-mail</label>
+                <input type="email" class="checkout-novo__boleto-input checkout-novo__boleto-input--disabled" id="boleto-email" value="eva******@gmail****" readonly disabled aria-readonly="true">
+              </div>
+            </div>
+
+            <div class="checkout-novo__boleto-actions">
+              <button type="button" class="checkout-novo__boleto-btn checkout-novo__boleto-btn--primary" id="boleto-continuar-1">Continuar</button>
+              <a href="mercado-pago.html" class="checkout-novo__boleto-btn checkout-novo__boleto-btn--secondary" id="boleto-voltar-1">Voltar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="checkout-novo__boleto-step checkout-novo__boleto-step--hidden" id="boleto-step-2" data-step="2">
+          <div class="checkout-novo__boleto-content">
+            <span class="checkout-novo__boleto-step-label">PASSO 2 DE 2</span>
+            <h1 class="checkout-novo__boleto-title">Informe o endereço de cobrança</h1>
+
+            <div class="checkout-novo__boleto-card">
+              <div class="checkout-novo__boleto-field">
+                <label class="checkout-novo__boleto-label" for="boleto-cep">CEP</label>
+                <div class="checkout-novo__boleto-input-with-link">
+                  <input type="text" class="checkout-novo__boleto-input" id="boleto-cep" placeholder="00000-000" maxlength="9" inputmode="numeric" pattern="[0-9]*" autocomplete="postal-code">
+                  <a href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank" rel="noopener noreferrer" class="checkout-novo__boleto-cep-link">Não sei o CEP</a>
+                </div>
+              </div>
+
+              <div class="checkout-novo__boleto-field">
+                <label class="checkout-novo__boleto-label" for="boleto-estado">Estado</label>
+                <select class="checkout-novo__boleto-input checkout-novo__boleto-select-full" id="boleto-estado" autocomplete="address-level1">
+                  <option value="">Selecione</option>
+                  <option value="AC">Acre</option>
+                  <option value="AL">Alagoas</option>
+                  <option value="AP">Amapá</option>
+                  <option value="AM">Amazonas</option>
+                  <option value="BA">Bahia</option>
+                  <option value="CE">Ceará</option>
+                  <option value="DF">Distrito Federal</option>
+                  <option value="ES">Espírito Santo</option>
+                  <option value="GO">Goiás</option>
+                  <option value="MA">Maranhão</option>
+                  <option value="MT">Mato Grosso</option>
+                  <option value="MS">Mato Grosso do Sul</option>
+                  <option value="MG">Minas Gerais</option>
+                  <option value="PA">Pará</option>
+                  <option value="PB">Paraíba</option>
+                  <option value="PR">Paraná</option>
+                  <option value="PE">Pernambuco</option>
+                  <option value="PI">Piauí</option>
+                  <option value="RJ">Rio de Janeiro</option>
+                  <option value="RN">Rio Grande do Norte</option>
+                  <option value="RS">Rio Grande do Sul</option>
+                  <option value="RO">Rondônia</option>
+                  <option value="RR">Roraima</option>
+                  <option value="SC">Santa Catarina</option>
+                  <option value="SP">São Paulo</option>
+                  <option value="SE">Sergipe</option>
+                  <option value="TO">Tocantins</option>
+                </select>
+              </div>
+
+              <div class="checkout-novo__boleto-field">
+                <label class="checkout-novo__boleto-label" for="boleto-cidade">Cidade</label>
+                <input type="text" class="checkout-novo__boleto-input" id="boleto-cidade" placeholder="Ex.: Florianópolis" autocomplete="address-level2">
+              </div>
+
+              <div class="checkout-novo__boleto-field">
+                <label class="checkout-novo__boleto-label" for="boleto-bairro">Bairro</label>
+                <input type="text" class="checkout-novo__boleto-input" id="boleto-bairro" placeholder="Ex.: Jardins" autocomplete="address-level3">
+              </div>
+
+              <div class="checkout-novo__boleto-field">
+                <label class="checkout-novo__boleto-label" for="boleto-rua">Rua/Avenida</label>
+                <input type="text" class="checkout-novo__boleto-input" id="boleto-rua" placeholder="Ex.: Rua Canção das Gaivotas" autocomplete="address-line1">
+              </div>
+
+              <div class="checkout-novo__boleto-field checkout-novo__boleto-field--row">
+                <div class="checkout-novo__boleto-field-inline">
+                  <label class="checkout-novo__boleto-label" for="boleto-numero">Número</label>
+                  <input type="text" class="checkout-novo__boleto-input checkout-novo__boleto-input--short" id="boleto-numero" placeholder="Ex.: 23" autocomplete="off">
+                </div>
+                <label class="checkout-novo__boleto-checkbox-label">
+                  <input type="checkbox" class="checkout-novo__boleto-checkbox" id="boleto-sem-numero" aria-label="Sem número">
+                  <span>Sem número</span>
+                </label>
+              </div>
+
+              <div class="checkout-novo__boleto-field">
+                <label class="checkout-novo__boleto-label" for="boleto-complemento">Complemento (opcional)</label>
+                <input type="text" class="checkout-novo__boleto-input" id="boleto-complemento" placeholder="" autocomplete="address-line2">
+              </div>
+            </div>
+
+            <div class="checkout-novo__boleto-actions">
+              <button type="button" class="checkout-novo__boleto-btn checkout-novo__boleto-btn--primary" id="boleto-continuar-2">Continuar</button>
+              <button type="button" class="checkout-novo__boleto-btn checkout-novo__boleto-btn--secondary" id="boleto-voltar-2">Voltar</button>
+            </div>
+
+            <p class="checkout-novo__boleto-footer">Processado pelo Mercado Pago.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    (function() {
+      (function setTotalFromStorage() {
+        var numEl = document.querySelector('.checkout-header-card__number');
+        var valueEl = document.querySelector('.checkout-header-card__value');
+        if (!numEl) return;
+        var total = 0;
+        try {
+          var raw = localStorage.getItem('animacase_checkout_data');
+          if (raw) {
+            var data = JSON.parse(raw);
+            if (data && typeof data.total === 'number') total = data.total;
+          }
+        } catch (_) {}
+        var formatted = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(total);
+        numEl.textContent = formatted;
+        if (valueEl) valueEl.setAttribute('aria-label', 'R$ ' + formatted);
+      })();
+
+      (function setEmailFromStorage() {
+        var el = document.getElementById('boleto-email');
+        if (!el) return;
+        var email = '';
+        try { email = localStorage.getItem('animacase_checkout_email') || ''; } catch (_) {}
+        if (email && email.indexOf('@') > 0) {
+          var at = email.indexOf('@');
+          var local = email.substring(0, at);
+          var rest = email.substring(at + 1);
+          var dot = rest.lastIndexOf('.');
+          var domain = dot >= 0 ? rest.substring(0, dot) : rest;
+          var localShow = local.length >= 3 ? local.substring(0, 3) : (local || '***');
+          el.value = localShow + '******@' + domain + '****';
+        }
+      })();
+
+      (function loadingModal() {
+        var modal = document.getElementById('checkout-loading-modal');
+        if (!modal) return;
+        setTimeout(function() {
+          modal.classList.add('checkout-novo__loading-modal--hidden');
+          modal.setAttribute('aria-busy', 'false');
+          setTimeout(function() { modal.style.display = 'none'; }, 350);
+        }, 850);
+      })();
+
+      (function interceptMpLinks() {
+        var mpPages = ['mercado-pago.html', 'checkout-pix-review.html', 'checkout-pix-gerado.html', 'checkout-pix-aprovado.html', 'checkout-boleto.html'];
+        document.querySelectorAll('a[href]').forEach(function(a) {
+          var href = (a.getAttribute('href') || '').split('?')[0].replace(/^.*\//, '');
+          if (mpPages.indexOf(href) !== -1 && href !== 'checkout-boleto.html') {
+            a.addEventListener('click', function(e) {
+              e.preventDefault();
+              var modal = document.getElementById('checkout-loading-modal');
+              if (modal) {
+                modal.classList.remove('checkout-novo__loading-modal--hidden');
+                modal.style.display = 'flex';
+                modal.setAttribute('aria-busy', 'true');
+              }
+              setTimeout(function() { window.location.href = a.getAttribute('href'); }, 850);
+            });
+          }
+        });
+      })();
+
+      var currentStep = 1;
+
+      function showStep(step) {
+        currentStep = step;
+        document.getElementById('boleto-step-1').classList.toggle('checkout-novo__boleto-step--hidden', step !== 1);
+        document.getElementById('boleto-step-2').classList.toggle('checkout-novo__boleto-step--hidden', step !== 2);
+      }
+
+      function showError(fieldId, msg) {
+        var el = document.getElementById(fieldId);
+        if (el) el.textContent = msg || '';
+      }
+
+      function validateStep1() {
+        var doc = (document.getElementById('boleto-documento').value || '').trim();
+        var nome = (document.getElementById('boleto-nome').value || '').trim();
+        var sobrenome = (document.getElementById('boleto-sobrenome').value || '').trim();
+
+        showError('boleto-doc-error', '');
+        showError('boleto-nome-error', '');
+        showError('boleto-sobrenome-error', '');
+
+        var ok = true;
+        if (!doc) { showError('boleto-doc-error', 'Informe o documento.'); ok = false; }
+        if (!nome) { showError('boleto-nome-error', 'Informe o nome.'); ok = false; }
+        if (!sobrenome) { showError('boleto-sobrenome-error', 'Informe o sobrenome.'); ok = false; }
+        return ok;
+      }
+
+      document.getElementById('boleto-continuar-1').addEventListener('click', function() {
+        if (!validateStep1()) return;
+        var modal = document.getElementById('checkout-loading-modal');
+        modal.classList.remove('checkout-novo__loading-modal--hidden');
+        modal.style.display = 'flex';
+        modal.setAttribute('aria-busy', 'true');
+        setTimeout(function() {
+          modal.classList.add('checkout-novo__loading-modal--hidden');
+          modal.setAttribute('aria-busy', 'false');
+          setTimeout(function() {
+            modal.style.display = 'none';
+            showStep(2);
+          }, 350);
+        }, 800);
+      });
+
+      document.getElementById('boleto-voltar-2').addEventListener('click', function() {
+        showStep(1);
+      });
+
+      document.getElementById('boleto-continuar-2').addEventListener('click', function() {
+        console.log('Boleto: gerar boleto (placeholder)');
+      });
+
+      document.getElementById('boleto-sem-numero').addEventListener('change', function() {
+        var input = document.getElementById('boleto-numero');
+        var checked = this.checked;
+        input.disabled = checked;
+        input.value = checked ? 'S/N' : '';
+      });
+
+      /* CPF/CNPJ: aceitar apenas dígitos e auto-formatação */
+      function formatCPF(value) {
+        var digits = value.replace(/\D/g, '').slice(0, 11);
+        return digits.replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+      }
+      function formatCNPJ(value) {
+        var digits = value.replace(/\D/g, '').slice(0, 14);
+        return digits.replace(/(\d{2})(\d)/, '$1.$2').replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d)/, '$1/$2').replace(/(\d{4})(\d{1,2})$/, '$1-$2');
+      }
+      var docInput = document.getElementById('boleto-documento');
+      var docType = document.getElementById('boleto-doc-type');
+      docInput.addEventListener('input', function() {
+        var v = this.value;
+        this.value = docType.value === 'CNPJ' ? formatCNPJ(v) : formatCPF(v);
+      });
+      docType.addEventListener('change', function() {
+        docInput.placeholder = this.value === 'CNPJ' ? '99.999.999/9999-99' : '999.999.999-99';
+        docInput.maxLength = this.value === 'CNPJ' ? 18 : 14;
+        docInput.value = docInput.value ? (this.value === 'CNPJ' ? formatCNPJ(docInput.value) : formatCPF(docInput.value)) : '';
+      });
+
+      /* CEP: aceitar apenas 8 dígitos e auto-formatação 99999-999 */
+      function formatCEP(value) {
+        var digits = value.replace(/\D/g, '').slice(0, 8);
+        return digits.length > 5 ? digits.replace(/(\d{5})(\d)/, '$1-$2') : digits;
+      }
+      document.getElementById('boleto-cep').addEventListener('input', function() {
+        this.value = formatCEP(this.value);
+      });
+
+    })();
+  </script>
+</body>
+</html>

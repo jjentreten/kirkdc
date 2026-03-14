@@ -1,0 +1,50 @@
+/**
+ * Barra de urgência – fixa no topo, faixa informativa compacta.
+ * Variantes: oferta terminando (loja) / oferta reservada (checkout).
+ */
+.urgency-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 24px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: linear-gradient(90deg, #043684 0%, #0a4da3 100%);
+  color: #FFFFFF;
+  font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.2px;
+  line-height: 1;
+  z-index: 1001;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.urgency-bar__icon {
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+}
+
+.urgency-bar__icon svg {
+  display: block;
+  width: 12px;
+  height: 12px;
+}
+
+.urgency-bar__counter {
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Reserva espaço no topo quando a barra está presente */
+body.has-urgency-bar {
+  padding-top: 24px;
+}
