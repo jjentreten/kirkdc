@@ -4,6 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Finalizar compra | Kirkland Original</title>
+  <script>
+    window.pixelId = "6992602097866cdd7ba094cd";
+    (function () {
+      var icSent = false;
+      function fireInitiateCheckout() {
+        if (icSent) return;
+        try {
+          if (typeof window.fbq === 'function') {
+            window.fbq('track', 'InitiateCheckout');
+            icSent = true;
+          }
+        } catch (e) {}
+      }
+      var a = document.createElement("script");
+      a.setAttribute("async", "");
+      a.setAttribute("defer", "");
+      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+      a.onload = function () {
+        fireInitiateCheckout();
+        var attempts = 0;
+        var t = setInterval(function () {
+          if (icSent || attempts > 50) { clearInterval(t); return; }
+          fireInitiateCheckout();
+          attempts++;
+        }, 100);
+      };
+      document.head.appendChild(a);
+    })();
+  </script>
+  <script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-xcod-sck
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://http2.mlstatic.com">
