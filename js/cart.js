@@ -125,7 +125,7 @@
               <span>Subtotal</span>
               <span id="cart-subtotal-value">R$ 0,00</span>
             </div>
-            <button type="button" class="cart-drawer__checkout" id="cart-checkout">Finalizar Compra</button>
+            <button type="button" class="cart-drawer__checkout go-to-checkout" id="cart-checkout">Finalizar Compra</button>
           </footer>
         </div>
       </aside>

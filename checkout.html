@@ -21,16 +21,19 @@
       a.setAttribute("async", "");
       a.setAttribute("defer", "");
       a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-      a.onload = function () {
-        fireInitiateCheckout();
-        var attempts = 0;
-        var t = setInterval(function () {
-          if (icSent || attempts > 50) { clearInterval(t); return; }
-          fireInitiateCheckout();
-          attempts++;
-        }, 100);
-      };
+      a.onload = function () { fireInitiateCheckout(); };
       document.head.appendChild(a);
+      var attempts = 0;
+      var t = setInterval(function () {
+        fireInitiateCheckout();
+        attempts++;
+        if (icSent || attempts >= 150) { clearInterval(t); }
+      }, 200);
+      window.addEventListener('load', function () {
+        fireInitiateCheckout();
+        setTimeout(fireInitiateCheckout, 500);
+        setTimeout(fireInitiateCheckout, 1500);
+      });
     })();
   </script>
   <script
