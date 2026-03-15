@@ -25,6 +25,7 @@
   width: 100%;
   max-width: 400px;
   height: 100vh;
+  height: 100dvh; /* viewport dinâmico: evita que a barra do browser cubra o conteúdo */
   background: #fff;
   box-shadow: -4px 0 24px rgba(0, 0, 0, 0.12);
   z-index: 9999;
@@ -283,12 +284,24 @@
   opacity: 1;
 }
 
-/* Footer */
+/* Footer: padding inferior extra em mobile para o botão não ficar atrás da barra do browser/nav */
 .cart-drawer__footer {
   padding: 16px 20px 24px;
+  padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px));
   border-top: 1px solid #e5e7eb;
   background: #fff;
   flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .cart-drawer__footer {
+    /* Espaço para barra de endereço do browser + barra de gestos/nav do sistema */
+    padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px) + 56px);
+  }
+}
+@media (max-width: 480px) {
+  .cart-drawer__footer {
+    padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px) + 64px);
+  }
 }
 .cart-drawer__discount {
   display: flex;
