@@ -85,6 +85,7 @@
     .pdp__badge-title { display: flex; align-items: center; gap: 6px; }
     .pdp__badge-icon { display: inline-flex; align-items: center; justify-content: center; color: var(--brand-blue); flex-shrink: 0; }
     .pdp__badge-icon svg { width: 18px; height: 18px; }
+    .pdp-coupon-timer { font-weight: 700; color: #1a1a1a; }
     .pdp__buy {
       display: block;
       width: 100%;
@@ -327,12 +328,12 @@
     <div class="pdp__badge" role="region" aria-label="Promoção">
       <ul>
         <li class="pdp__badge-title">
-          <b>10% OFF no Pix</b>
+          <b>R$ 95,92 no Pix</b>
           <span class="pdp__badge-icon" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
           </span>
         </li>
-        <li>Use o cupom <strong>"NOPIX"</strong> e ganhe +10% de desconto.</li>
+        <li>O cupom <strong>"NOPIX"</strong> expira em <span id="pdp-coupon-timer" class="pdp-coupon-timer">60:00</span></li>
       </ul>
     </div>
 
@@ -755,5 +756,6 @@
   window.addEventListener('scroll',function(){ requestAnimationFrame(up); },{passive:true}); up(); })();
   </script>
   <script src="../js/cart.js"></script>
+  <script src="../js/pdp-coupon-timer.js"></script>
 </body>
 </html>

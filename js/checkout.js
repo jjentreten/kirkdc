@@ -9,7 +9,7 @@
   const PRICE_REGULAR = 47.90;
   const SHIPPING_EXPRESS_PRICE = 19.90;
 
-  const COUPONS = { NOPIX: { actual: 10, display: 10 } };
+  const COUPONS = { NOPIX: { actual: 20, display: 20 } };
   const COUPON_PIX_ONLY = 'NOPIX'; // desconto só aplicado no PIX; cartão continua disponível
   var appliedCoupon = null;
 

@@ -1,0 +1,154 @@
+/**
+ * Popup de cupom 25% PIX - Kirkland Original
+ */
+.coupon-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.coupon-popup-overlay.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.coupon-popup {
+  --brand-blue: #043684;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  max-width: 360px;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+.coupon-popup-overlay.is-visible .coupon-popup {
+  transform: scale(1);
+}
+
+.coupon-popup__logo-wrap {
+  position: relative;
+  padding: 24px 24px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+.coupon-popup__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  background: #f3f4f6;
+  color: #374151;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+.coupon-popup__close:hover {
+  background: #e5e7eb;
+  color: #1a1a1a;
+}
+.coupon-popup__close svg {
+  display: block;
+}
+.coupon-popup__logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 160px;
+  height: auto;
+}
+
+.coupon-popup__body {
+  padding: 24px;
+}
+
+.coupon-popup__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 16px;
+  line-height: 1.35;
+}
+
+.coupon-popup__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+.coupon-popup__btn {
+  display: block;
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: inherit;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.2s, background 0.2s;
+}
+.coupon-popup__btn--primary {
+  color: #fff;
+  background: linear-gradient(90deg, var(--brand-blue), #0a4da3);
+}
+.coupon-popup__btn--primary:hover {
+  opacity: 0.92;
+}
+.coupon-popup__btn--secondary {
+  color: #6b7280;
+  background: transparent;
+}
+.coupon-popup__btn--secondary:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* Tela do cupom (após Resgatar) */
+.coupon-popup__screen-coupon {
+  display: none;
+}
+.coupon-popup-overlay[data-screen="coupon"] .coupon-popup__screen-offer {
+  display: none;
+}
+.coupon-popup-overlay[data-screen="coupon"] .coupon-popup__screen-coupon {
+  display: block;
+}
+
+.coupon-popup__code-wrap {
+  margin: 16px 0 20px;
+  padding: 16px;
+  background: #f0f9ff;
+  border: 2px dashed var(--brand-blue);
+  border-radius: 12px;
+}
+.coupon-popup__code-label {
+  font-size: 0.8125rem;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+.coupon-popup__code {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brand-blue);
+  letter-spacing: 0.05em;
+}
+.coupon-popup__disclaimer {
+  font-size: 0.8125rem;
+  color: #6b7280;
+  line-height: 1.45;
+  margin: 0 0 20px;
+}
