@@ -20,11 +20,12 @@ const UTMIFY_URL = 'https://api.utmify.com.br/api-credentials/orders';
 const UTMIFY_TOKEN = (process.env.UTMIFY_API_TOKEN || '').trim();
 const SITE_URL = (process.env.SITE_URL || 'http://localhost:' + PORT).replace(/\/$/, '');
 const CORS_ORIGIN = (process.env.CORS_ORIGIN || '').trim();
+const corsOrigins = CORS_ORIGIN ? CORS_ORIGIN.split(/[\s,]+/).filter(Boolean) : null;
 const PENDING_ORDERS_FILE = path.join(__dirname, 'data', 'pending-utmify-orders.json');
 
 const PLATFORM_NAME = 'Kirkland Original';
 
-app.use(cors(CORS_ORIGIN ? { origin: CORS_ORIGIN } : {}));
+app.use(cors(corsOrigins ? { origin: corsOrigins.length === 1 ? corsOrigins[0] : corsOrigins } : {}));
 app.use(express.json());
 
 function ensureDataDir() {
