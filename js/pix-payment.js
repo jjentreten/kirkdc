@@ -29,7 +29,6 @@
   function startStatusPolling(transactionId, email) {
     if (!transactionId) return;
     var apiBase = (typeof window !== 'undefined' && window.API_BASE) ? window.API_BASE : '';
-    if (!apiBase) return;
     var pollTimer = setInterval(function () {
       fetch(apiBase + '/api/pix-status/' + encodeURIComponent(transactionId))
         .then(function (r) { return r.json(); })

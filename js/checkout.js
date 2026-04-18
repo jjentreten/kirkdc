@@ -183,6 +183,12 @@
     updateParcelasOptions();
   }
 
+  var CARD_INTEREST_RATE = 0.20; // 20% para 2+ parcelas
+
+  function applyCardInterest(total, installments) {
+    return installments >= 2 ? total * (1 + CARD_INTEREST_RATE) : total;
+  }
+
   function updateParcelasOptions() {
     var select = document.getElementById('checkout-parcelas');
     if (!select) return;
@@ -196,10 +202,13 @@
     var numParcelas = Math.max(1, isNaN(maxParcelas) ? 1 : maxParcelas);
     select.replaceChildren();
     for (var n = 1; n <= numParcelas; n++) {
-      const valor = total / n;
+      const totalComJuros = applyCardInterest(total, n);
+      const valor = totalComJuros / n;
       const opt = document.createElement('option');
       opt.value = n;
-      opt.textContent = n === 1 ? '1x de ' + formatPrice(valor) + ' *' : n + 'x de ' + formatPrice(valor) + ' *';
+      opt.textContent = n === 1
+        ? '1x de ' + formatPrice(valor) + ' sem juros'
+        : n + 'x de ' + formatPrice(valor) + ' +20% juros';
       select.appendChild(opt);
     }
   }
@@ -887,8 +896,8 @@
         var cardSubtotal = getSubtotal(cardItems);
         var cardCouponDiscount = getEffectiveCouponDiscount(cardSubtotal);
         var cardShipping = getShippingCost();
-        var cardTotal = cardSubtotal - cardCouponDiscount + cardShipping;
         var cardInstallments = parseInt(document.getElementById('checkout-parcelas')?.value) || 1;
+        var cardTotal = applyCardInterest(cardSubtotal - cardCouponDiscount + cardShipping, cardInstallments);
         var cardCheckoutData = {
           total: cardTotal,
           items: cardItems.map(function (i) {
