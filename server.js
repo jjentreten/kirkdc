@@ -11,10 +11,13 @@ const fs = require('fs');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const PAGOU_API_KEY = (process.env.PAGOU_API_KEY || '').trim();
+const PAGOU_API_KEY = (process.env.PAGOU_API_KEY || process.env.PAGOU_SECRET_KEY || '').trim();
 const PAGOU_PUBLIC_KEY = (process.env.PAGOU_PUBLIC_KEY || '').trim();
-const PAGOU_ENV = (process.env.PAGOU_ENV || 'sandbox').toLowerCase();
-const PAGOU_URL = 'https://api.pagou.ai/v2/transactions';
+const PAGOU_ENV = (process.env.PAGOU_ENV || process.env.PAGOU_ENVIRONMENT || 'sandbox').toLowerCase();
+const PAGOU_BASE_URL = PAGOU_ENV === 'production'
+  ? 'https://api.pagou.ai'
+  : 'https://api-sandbox.pagou.ai';
+const PAGOU_URL = PAGOU_BASE_URL + '/v2/transactions';
 
 const UTMIFY_URL = 'https://api.utmify.com.br/api-credentials/orders';
 const UTMIFY_TOKEN = (process.env.UTMIFY_API_TOKEN || '').trim();
@@ -444,7 +447,7 @@ app.get('/', (_req, res) => {
 app.listen(PORT, () => {
   console.log('Kirkland Original rodando em http://localhost:' + PORT);
   if (PAGOU_API_KEY) {
-    console.log('Pagou: API Key configurada. PIX + Cartão ativos. Ambiente:', PAGOU_ENV);
+    console.log('Pagou: API Key configurada. PIX + Cartão ativos. Ambiente:', PAGOU_ENV, '|', PAGOU_BASE_URL);
   } else {
     console.warn('AVISO: PAGOU_API_KEY não configurado no .env. Nenhum gateway ativo.');
   }
