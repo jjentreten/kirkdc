@@ -248,14 +248,19 @@ app.post('/api/create-pix', async (req, res) => {
     products: buildPagouProducts(items, amountCentavos)
   };
 
+  console.log('[create-pix] payload:', JSON.stringify(payload));
+
   try {
     const response = await fetch(PAGOU_URL, {
       method: 'POST',
       headers: pagouHeaders(),
       body: JSON.stringify(payload)
     });
-    const json = await response.json();
-    if (!json.success || !json.data) {
+    const text = await response.text();
+    console.log('[create-pix] Pagou HTTP', response.status, ':', text.slice(0, 600));
+    let json;
+    try { json = JSON.parse(text); } catch { json = {}; }
+    if (!response.ok || !json.success || !json.data) {
       const errMsg = json.detail || json.title || json.message || 'Erro ao criar PIX';
       return res.status(response.ok ? 500 : response.status).json({ success: false, error: String(errMsg) });
     }
