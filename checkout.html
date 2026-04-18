@@ -410,33 +410,11 @@
                         </label>
                         <div class="checkout-form__payment-option-content" id="card-fields">
                           <div class="checkout-form__card-inner">
-                            <label class="checkout-form__field checkout-form__field--card-number" for="checkout-card-number">
-                              <div class="checkout-form__input-wrap">
-                                <input type="text" id="checkout-card-number" name="cardNumber" placeholder="Número do cartão" maxlength="19" autocomplete="cc-number" aria-label="Número do cartão">
-                              </div>
-                            </label>
-                            <div class="checkout-form__row checkout-form__row--grid-2">
-                              <label class="checkout-form__field" for="checkout-card-expiry">
-                                <input type="text" id="checkout-card-expiry" name="cardExpiry" placeholder="Validade (MM/AA)" maxlength="5" autocomplete="cc-exp" aria-label="Validade do cartão">
-                              </label>
-                              <label class="checkout-form__field checkout-form__field--cvv" for="checkout-card-cvv">
-                                <input type="text" id="checkout-card-cvv" name="cardCvv" placeholder="CVV" maxlength="4" autocomplete="cc-csc" aria-label="CVV">
-                              </label>
-                            </div>
-                            <label class="checkout-form__field checkout-form__field--card-name" for="checkout-card-name">
-                              <span class="checkout-form__input-wrap checkout-form__input-wrap--placeholder">
-                                <input type="text" id="checkout-card-name" name="cardName" autocomplete="nope" aria-label="Nome no cartão">
-                                <span class="checkout-form__fake-placeholder" id="checkout-card-name-placeholder" aria-hidden="true">Nome no cartão</span>
-                              </span>
-                            </label>
+                            <div id="card-element" class="checkout-form__payment-element"></div>
                             <label class="checkout-form__field" for="checkout-parcelas">
                               <select id="checkout-parcelas" name="parcelas" aria-label="Parcelas">
                                 <option value="1">1x de R$ 0,00 *</option>
                               </select>
-                            </label>
-                            <label class="checkout-form__checkbox checkout-form__checkbox--billing" for="checkout-same-billing">
-                              <input type="checkbox" id="checkout-same-billing" name="sameBilling" checked>
-                              <span>Usar endereço de entrega como endereço de cobrança</span>
                             </label>
                           </div>
                         </div>
@@ -519,6 +497,7 @@
   </div>
 
   <script src="js/offer-timer.js"></script>
+  <script src="https://js.pagou.ai/payments/v3.js"></script>
   <script src="js/checkout.js"></script>
 </body>
 </html>
