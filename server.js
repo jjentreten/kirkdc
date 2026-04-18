@@ -19,11 +19,12 @@ const PAGOU_URL = 'https://api.pagou.ai/v2/transactions';
 const UTMIFY_URL = 'https://api.utmify.com.br/api-credentials/orders';
 const UTMIFY_TOKEN = (process.env.UTMIFY_API_TOKEN || '').trim();
 const SITE_URL = (process.env.SITE_URL || 'http://localhost:' + PORT).replace(/\/$/, '');
+const CORS_ORIGIN = (process.env.CORS_ORIGIN || '').trim();
 const PENDING_ORDERS_FILE = path.join(__dirname, 'data', 'pending-utmify-orders.json');
 
 const PLATFORM_NAME = 'Kirkland Original';
 
-app.use(cors());
+app.use(cors(CORS_ORIGIN ? { origin: CORS_ORIGIN } : {}));
 app.use(express.json());
 
 function ensureDataDir() {
@@ -188,7 +189,7 @@ function normalizeCreatePaymentBody(body) {
 app.use(express.static(path.join(__dirname)));
 
 // GET /api/config - Configurações públicas para o frontend
-app.get('/api/config', (req, res) => {
+app.get('/api/config', (_req, res) => {
   res.json({ pagouPublicKey: PAGOU_PUBLIC_KEY, pagouEnv: PAGOU_ENV });
 });
 
@@ -435,7 +436,7 @@ app.get('/api/pix-status/:transactionId', async (req, res) => {
   }
 });
 
-app.get('/', (req, res) => {
+app.get('/', (_req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
