@@ -243,7 +243,7 @@ app.post('/api/create-pix', async (req, res) => {
       name: customer.name.trim(),
       email: customer.email.trim(),
       phone: customer.phone,
-      document: { type: 'cpf', number: docNumber }
+      document: { type: 'CPF', number: docNumber }
     },
     products: buildPagouProducts(items, amountCentavos)
   };
@@ -261,11 +261,15 @@ app.post('/api/create-pix', async (req, res) => {
     let json;
     try { json = JSON.parse(text); } catch { json = {}; }
     if (!response.ok || !json.success || !json.data) {
-      const errMsg = json.detail || json.title || json.message || 'Erro ao criar PIX';
+      const fieldErrors = Array.isArray(json.errors)
+        ? json.errors.map((e) => `${e.field}: ${e.message}`).join('; ')
+        : '';
+      const errMsg = fieldErrors || json.detail || json.title || json.message || 'Erro ao criar PIX';
+      console.error('[create-pix] erro Pagou:', JSON.stringify(json));
       return res.status(response.ok ? 500 : response.status).json({ success: false, error: String(errMsg) });
     }
     const data = json.data;
-    const qrcode = data.qr_code || '';
+    const qrcode = data.pix?.qr_code || '';
     const transactionId = data.id;
     if (!qrcode) {
       return res.status(500).json({ success: false, error: 'Pagou: QR Code PIX não retornado' });
@@ -347,7 +351,7 @@ app.post('/api/create-card', async (req, res) => {
       name: customer.name.trim(),
       email: customer.email.trim(),
       phone: customer.phone,
-      document: { type: 'cpf', number: docNumber }
+      document: { type: 'CPF', number: docNumber }
     },
     products: buildPagouProducts(items, amountCentavos)
   };
