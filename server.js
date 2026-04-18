@@ -145,7 +145,7 @@ function pagouHeaders() {
   return {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
-    'apiKey': PAGOU_API_KEY
+    'Authorization': 'Bearer ' + PAGOU_API_KEY
   };
 }
 
