@@ -144,6 +144,19 @@ async function sendToUtmify(payload) {
   }
 }
 
+// Garante que products.sum == amount (exigido pela Pagou).
+// Se houver divergência (frete, desconto, promoção), envia produto único com o total exato.
+function buildPagouProducts(items, amountCentavos) {
+  const mapped = items.map((item) => ({
+    name: item.name || item.title || 'Produto',
+    price: item.unitPrice || item.price,
+    quantity: item.quantity || 1
+  }));
+  const sum = mapped.reduce((s, p) => s + p.price * p.quantity, 0);
+  if (Math.abs(sum - amountCentavos) <= 1) return mapped;
+  return [{ name: 'Pedido Kirkland Original', price: amountCentavos, quantity: 1 }];
+}
+
 function pagouHeaders() {
   return {
     'Content-Type': 'application/json',
@@ -232,11 +245,7 @@ app.post('/api/create-pix', async (req, res) => {
       phone: customer.phone,
       document: { type: 'cpf', number: docNumber }
     },
-    products: items.map((item) => ({
-      name: item.name || item.title || 'Produto',
-      price: item.unitPrice || item.price,
-      quantity: item.quantity || 1
-    }))
+    products: buildPagouProducts(items, amountCentavos)
   };
 
   try {
@@ -335,11 +344,7 @@ app.post('/api/create-card', async (req, res) => {
       phone: customer.phone,
       document: { type: 'cpf', number: docNumber }
     },
-    products: items.map((item) => ({
-      name: item.name || item.title || 'Produto',
-      price: item.unitPrice || item.price,
-      quantity: item.quantity || 1
-    }))
+    products: buildPagouProducts(items, amountCentavos)
   };
 
   try {
